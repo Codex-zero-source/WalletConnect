@@ -13,9 +13,10 @@ services:
       - key: EMAIL_TO
         sync: false
 
-  - type: static_site
+  - type: web
     name: connect-wallet-client
     rootDir: client
+    runtime: static
     buildCommand: npm install && npm run build
     publishDir: build
     routes:
