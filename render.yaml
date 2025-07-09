@@ -30,10 +30,7 @@ services:
       - key: REACT_APP_ALCHEMY_API_KEY
         sync: false
       - key: REACT_APP_API_URL
-        fromService:
-          type: web
-          name: connect-wallet-server
-          property: url
+        sync: false
       - key: REACT_APP_SOLANA_RECIPIENT_ADDRESS
         sync: false
       - key: REACT_APP_SOLANA_RPC_URL
