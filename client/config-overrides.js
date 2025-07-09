@@ -10,6 +10,7 @@ module.exports = function override(config) {
     stream: require.resolve('stream-browserify'),
     assert: require.resolve('assert/'),
     util: require.resolve('util/'),
+    crypto: require.resolve('crypto-browserify'),
   };
 
   config.plugins = [
