@@ -1,5 +1,19 @@
 services:
   - type: web
+    name: connect-wallet-server
+    env: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: EMAIL_TO
+        sync: false
+
+  - type: web
     name: connect-wallet-client
     env: static
     rootDir: client
@@ -13,7 +27,10 @@ services:
       - key: REACT_APP_ALCHEMY_API_KEY
         sync: false
       - key: REACT_APP_API_URL
-        sync: false
+        fromService:
+          type: web
+          name: connect-wallet-server
+          property: url
       - key: REACT_APP_SOLANA_RECIPIENT_ADDRESS
         sync: false
       - key: REACT_APP_SOLANA_RPC_URL
