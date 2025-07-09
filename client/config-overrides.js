@@ -11,6 +11,7 @@ module.exports = function override(config) {
     assert: require.resolve('assert/'),
     util: require.resolve('util/'),
     crypto: require.resolve('crypto-browserify'),
+    process: require.resolve('process/browser'),
   };
 
   config.plugins = [
