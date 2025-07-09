@@ -13,6 +13,10 @@ module.exports = function override(config) {
     crypto: require.resolve('crypto-browserify'),
     process: require.resolve('process/browser'),
   };
+  config.resolve.alias = {
+      ...config.resolve.alias,
+      process: 'process/browser',
+  };
 
   config.plugins = [
     ...config.plugins,
